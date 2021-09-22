@@ -2,7 +2,7 @@
 #include<ctype.h>
 
 /* Chapter 8 */
-// Chapter 8, Exercise 1: count number of characters in file
+// Chapter 8, Exercise 1: count number of characters in file until EOF
 void chap_8_ex_1()
 {
   printf("Input: \n");
@@ -13,10 +13,10 @@ void chap_8_ex_1()
     count++; 
   } 
 
-  printf("There are %d characters in the input.\n", count);
+  printf("\nThere are %d characters in the input.\n", count);
 }
 
-// Chapter 8, Exercise 2: 
+// Chapter 8, Exercise 2: return ascii of each char until EOF
 void chap_8_ex_2()
 {
   printf("input: \n");
@@ -37,7 +37,7 @@ void chap_8_ex_2()
 
 }
 
-// Chapter 8, Exercise 3: 
+// Chapter 8, Exercise 3: count lower and upper case chars until EOF
 void chap_8_ex_3()
 {
   printf("input: \n");
@@ -52,7 +52,7 @@ void chap_8_ex_3()
 	printf("Uppercase count: %d\n", upper);
 }
 
-// Chapter 8, Exercise 4: 
+// Chapter 8, Exercise 4: average char num per word
 void chap_8_ex_4()
 {
   printf("input: \n");
@@ -72,11 +72,11 @@ void chap_8_ex_4()
 		}
 		else word_boolean = 0;
 	}
-	printf("There are around %.3f letters per word.\n", (float) letter_count / word_count);
+	printf("\nThere are around %.3f letters per word.\n", (float) letter_count / word_count);
 
 }
 
-// Chapter 8, Exercise 5: 
+// Chapter 8, Exercise 5: guess number
 void chap_8_ex_5()
 {
   int top = 100, bottom = 0, guess = 50;
@@ -102,16 +102,17 @@ void chap_8_ex_5()
 
 }
 
-// Chapter 8, Exercise 6: 
-char chap_8_ex_6()
+// Chapter 8, Exercise 6: first non-white space char
+void chap_8_ex_6()
 {
   printf("Input: ");
   char c = getchar();
 	while (isspace(c)) c = getchar();
-	return c;
+  printf("The first non-space character is: '%c'\n", c);
+	while (getchar() != '\n') continue;
 }
 
-// Chapter 8, Exercise 7: 
+// Chapter 8, Exercise 7: calculate gross pay, taxes, and net pay
 float tax_calculation (float gross_pay)
 {
   float tax_rate_less_300 = 0.15, tax_rate_next_150 = 0.20, tax_rate_rest = 0.25, remaining_amount_to_tax = 0, current_tax;
@@ -159,7 +160,7 @@ void chap_8_ex_7()
     case 'c': { pay_rate = 10.00; break;}
     case 'd': { pay_rate = 11.20; break;}
     case 'e': {printf("exiting…\n"); return; break;}
-    default: printf ("invalid input.\n"); return;
+    default: {printf ("invalid input.\n"); return;}
   }
   int hours;
   printf("How many hours a week did you work?: ");
@@ -171,12 +172,12 @@ void chap_8_ex_7()
 
   printf("The gross pay is: %.2f\n", gross_pay);
   printf("The taxes are: %.2f\n", taxes);
-  printf("The net pay is: %.2f\n", net_pay);
+  printf("The net pay is: %.2f\n\n\n", net_pay);
 }
 
 
 /* Chapter 9 */
-// Chapter 9, Exercise 1: 
+// Chapter 9, Exercise 1: minimum between 2 doubles
 double min(double a, double b)
 {
   if (a < b) return a;
@@ -188,13 +189,13 @@ void chap_9_ex_1 ()
   double a, b;
   printf("Enter a double: ");
   scanf("%lf", &a);
-  printf("Enter another double: ");
+  printf("\nEnter another double: ");
   scanf("%lf", &b);
   if (a == b) printf("The two doubles are equal.\n");
   else printf("The minimum between the 2 values is: %lf", min(a,b));
 }
 
-// Chapter 9, Exercise 2: 
+// Chapter 9, Exercise 2: print char in column
 void chline(char ch, int i,int j)
 {
   int column;
@@ -205,6 +206,7 @@ void chline(char ch, int i,int j)
 
 void chap_9_ex_2()
 {
+  while(getchar() == '\n') break;
   char ch;
   int i, j;
   printf("Enter a char: ");
@@ -216,7 +218,7 @@ void chap_9_ex_2()
   chline(ch,i,j);
 }
 
-// Chapter 9, Exercise 3: 
+// Chapter 9, Exercise 3: print char X times per line, on Y lines
 void print_char (char ch, int num, int line_num)
 {
   for(int i = 0; i < line_num; i++)
@@ -231,18 +233,19 @@ void print_char (char ch, int num, int line_num)
 
 void chap_9_ex_3()
 {
+  while(getchar() == '\n') break;
   char ch;
   int num, line_num;
-  printf("Enter a char: ");
+  printf("Enter a char: \n");
   scanf("%c", &ch);
-  printf("Enter the number of times you want to print it per line: ");
+  printf("Enter the number of times you want to print it per line: \n");
   scanf("%d", &num);
-  printf("Enter the number of lines that will print it: ");
+  printf("Enter the number of lines that will print it: \n");
   scanf("%d", &line_num);
   print_char(ch, num, line_num);
 }
 
-// Chapter 9, Exercise 4: 
+// Chapter 9, Exercise 4: harmonic mean
 void chap_9_ex_4 ()
 {
   double i, j;
@@ -256,7 +259,7 @@ void chap_9_ex_4 ()
   printf("The harmonic mean is: %lf\n", harmonic_mean);
 }
 
-// Chapter 9, Exercise 5: 
+// Chapter 9, Exercise 5: give 2 doubles the same value
 double larger_of(double x, double y)
 {
   if (x > y) return x;
@@ -265,6 +268,7 @@ double larger_of(double x, double y)
 
 void chap_9_ex_5()
 {
+  while(getchar()=='\n') break;
   double i, j;
   printf("Enter a double: ");
   scanf("%lf", &i);
@@ -272,10 +276,10 @@ void chap_9_ex_5()
   scanf("%lf", &j);
   i = larger_of(i, j);
   j = larger_of(i, j);
-  printf("Now, both doubles are equal to %lf", i);
+  printf("Now, both doubles are equal to %lf\n", i);
 }
 
-// Chapter 9, Exercise 6: 
+// Chapter 9, Exercise 6: char position
 int char_position(char ch)
 {
   if(isalpha(ch)){
@@ -288,39 +292,80 @@ int char_position(char ch)
 void chap_9_ex_6()
 {
   char c;
-  printf("Enter a char: ");
+  printf("Enter a char: \n");
   while((c = getchar()) != EOF)
   {
-    while((c = getchar()) == '\n') continue;
-
+    if(c == '\n') continue;
     if (isalpha(c)) printf("The input %c is a letter at position %d.\n", c, char_position(c));
-    else printf("The input %c is a letter.\n", c);
+    else printf("The input %c is not a letter.\n", c);
   } 
 }
 
-// Chapter 9, Exercise 7:
+// Chapter 9, Exercise 7: raise double to power
+double power(double num, int pow)
+{
+  if (num == 0) return 0;
+  if (pow == 0) return 1;
+  double result = 1;
+  int positive_pow = pow > 0 ? pow : pow * -1;
+  for(int i = 0; i < positive_pow; i++)
+      result *= num;
+  if(pow > 0) return result;
+  else return 1.0 / result; 
+}
 
+void chap_9_ex_7()
+{
+  printf("Enter a double: ");
+  double num;
+  scanf("%lf", &num);
+  printf("Raise this double to the power (int): ");
+  int pow;
+  scanf("%d", &pow);
+  printf("%lf to the power %d is %lf.\n", num, pow, power(num, pow));
+}
 
-// Chapter 9, Exercise 8:
+// Chapter 9, Exercise 8: raise double to power, recursively
+double power_recursive(double num, int pow)
+{
+  if (num == 0) return 0;
+  if (pow == 0) return 1;
+  double result;
+  int positive_pow = pow > 0 ? pow : pow * - 1;
+  result = num * power_recursive(num, positive_pow - 1);
+  if(pow > 0) return result;
+  else return 1.0 / result; 
+}
+
+void chap_9_ex_8()
+{
+  printf("Enter a double: ");
+  double num;
+  scanf("%lf", &num);
+  printf("Raise this double to the power (int): ");
+  int pow;
+  scanf("%d", &pow);
+  printf("%lf to the power %d is %lf.\n", num, pow, power_recursive(num, pow));
+}
 
 
 int main(){
    /* Chapter 8 */
 // Chapter 8, Exercise 1: 
 printf("Solution to Chapter 8, Exercise 1: \n");
-//chap_8_ex_1();
+chap_8_ex_1();
 
 // Chapter 8, Exercise 2: 
 printf("\nSolution to Chapter 8, Exercise 2: \n");
-//chap_8_ex_2();
+chap_8_ex_2();
 
 // Chapter 8, Exercise 3: 
 printf("\nSolution to Chapter 8, Exercise 3: \n");
-//chap_8_ex_3();
+chap_8_ex_3();
 
 // Chapter 8, Exercise 4: 
 printf("\nSolution to Chapter 8, Exercise 4: \n");
-//chap_8_ex_4();
+chap_8_ex_4();
 
 // Chapter 8, Exercise 5: 
 printf("\nSolution to Chapter 8, Exercise 5: \n");
@@ -328,40 +373,42 @@ chap_8_ex_5();
 
 // Chapter 8, Exercise 6: 
 printf("\nSolution to Chapter 8, Exercise 6: \n");
-//printf("The first non-space character is: '%c'", chap_8_ex_6());
+chap_8_ex_6();
 
 // Chapter 8, Exercise 7: 
 printf("\nSolution to Chapter 8, Exercise 7: \n");
-//chap_8_ex_7();
+chap_8_ex_7();
 
 /* Chapter 9 */
 // Chapter 9, Exercise 1: 
 printf("\nSolution to Chapter 9, Exercise 1: \n");
-//chap_9_ex_1();
+chap_9_ex_1();
 
 // Chapter 9, Exercise 2: 
 printf("\nSolution to Chapter 9, Exercise 2: \n");
-//chap_9_ex_2();
+chap_9_ex_2();
 
 // Chapter 9, Exercise 3: 
 printf("\nSolution to Chapter 9, Exercise 3: \n");
-//chap_9_ex_3();
+chap_9_ex_3();
 
 // Chapter 9, Exercise 4: 
 printf("\nSolution to Chapter 9, Exercise 4: \n");
-//chap_9_ex_4();
+chap_9_ex_4();
 
 // Chapter 9, Exercise 5: 
 printf("\nSolution to Chapter 9, Exercise 5: \n");
-//chap_9_ex_5();
+chap_9_ex_5();
 
 // Chapter 9, Exercise 6: 
 printf("\nSolution to Chapter 9, Exercise 6: \n");
-//chap_9_ex_6();
+chap_9_ex_6();
 
 // Chapter 9, Exercise 7: 
 printf("\nSolution to Chapter 9, Exercise 7: \n");
+chap_9_ex_7();
 
 // Chapter 9, Exercise 8: 
 printf("\nSolution to Chapter 9, Exercise 8: \n");
+chap_9_ex_8();
 } 
