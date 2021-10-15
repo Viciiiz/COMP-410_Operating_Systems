@@ -1,4 +1,5 @@
-# read each line and store then in a linkedlist
-# store each word from each line (each node) into another linkedlist
-# shift each word from that linkedlist left until each word is found in dictionary
+# read each line, convert to uppercase, write to new text file
+# from that new file, store each char from each line into a linkedlist
+# shift each char from that linkedlist left until each word is found in dictionary
 # return number of shift and write solution to file
+# repeat for each line

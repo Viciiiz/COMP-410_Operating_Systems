@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "read_file.h"
 
 // function to read each char from a text file
-char read_file(int char_index)
+char read_char_from_file(int char_index)
 {
    char current_char;
    FILE *file;
@@ -34,6 +35,6 @@ int main()
 {
   for(int i = 1; i < 50; i++)
   {
-    printf("%c", read_file(i));
+    printf("%c", read_char_from_file(i));
   }
 }

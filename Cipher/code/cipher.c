@@ -21,7 +21,7 @@ char * convert_to_uppercase(char * sentence)
   return all_upper_case;
 }
 
-// function to shift upper case letters to the left (since we shift to the right to encrypt, we shift to the right to decrypt)
+// function to shift upper case letters to the left (since we shift to the right to encrypt, we shift to the right to decrypt). If not uppercase, ignore (eg: punctuation...)
 char * shift_left(char * sentence)
 {
   char *shifted;
