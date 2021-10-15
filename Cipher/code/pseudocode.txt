@@ -1,0 +1,4 @@
+# read each line and store then in a linkedlist
+# store each word from each line (each node) into another linkedlist
+# shift each word from that linkedlist left until each word is found in dictionary
+# return number of shift and write solution to file
