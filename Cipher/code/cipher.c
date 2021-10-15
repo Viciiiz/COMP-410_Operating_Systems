@@ -10,15 +10,14 @@
 // function to convert all lowercase characters in a sentence to uppercase. It ignores non-letter characters.
 char * convert_to_uppercase(char * sentence)
 {
-  char *all_upper_case;
-  all_upper_case = malloc(strlen(sentence));
   for(int i = 0; i < strlen(sentence); i++)
   {
     if(sentence[i] >= 97 && sentence[i] <= 122) // if current character is lower case
-      * (all_upper_case + i) = sentence[i] - 32;
-    else *(all_upper_case + i) = sentence[i];
+      * (sentence + i) = sentence[i] - 32;
+    else *(sentence + i) = sentence[i];
   }
-  return all_upper_case;
+ // printf("result: %s\n", sentence);
+  return sentence;
 }
 
 // function to shift upper case letters to the left (since we shift to the right to encrypt, we shift to the right to decrypt). If not uppercase, ignore (eg: punctuation...)

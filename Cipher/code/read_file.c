@@ -8,14 +8,15 @@ char read_char_from_file(int char_index)
    char current_char;
    FILE *file;
 
-   if ((file = fopen("../encrypted_text.txt","r")) == NULL){
+   // if ((file = fopen("../encrypted_text.txt","r")) == NULL){
+   if ((file = fopen("../pseudocode.txt","r")) == NULL){
        printf("Error! opening file");
 
        // Program exits if the file pointer returns NULL.
        exit(1);
    }
 
-   for(int i = 0; i < char_index; i++)
+  for(int i = 0; i <= char_index; i++)
   {
    fscanf(file,"%c", &current_char);
   }

@@ -20,10 +20,11 @@ int main()
     *(current_line + count) = current_char;
     count++;
   }
+ 
   // convert current_line to all capital letter
   current_line = convert_to_uppercase(current_line);
-
+  printf("%s\n", current_line);
   // write current_line to all_capital.txt
-  for(int i = 0; i < strlen(current_line); i++)
-    write_to_text_file(current_line[i], "all_capital.txt");
+  // for(int i = 0; i < strlen(current_line); i++)
+  //   write_to_text_file(current_line[i], "all_capital.txt");
 }
