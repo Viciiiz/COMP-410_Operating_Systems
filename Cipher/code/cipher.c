@@ -61,18 +61,18 @@ void cipher_decrypt(char * sentence)
   }
 }
 
-int main ()
-{
- // printf("%s", convert_to_uppercase("Char *sentence"));
- // cipher_decrypt("char *sentence");
- char *alpha = "BUJI JHO IECUJXYDW";
- int count = 0;
- for(int i = 0; i < ALPHABET; i++)
- {
-   alpha = shift_left(alpha);
-   count++;
-   printf("%s   number of shift = %d\n", shift_left(alpha), count);
- }
- //printf("%s\n", shift_left(alpha));
-}
+// int main ()
+// {
+//  // printf("%s", convert_to_uppercase("Char *sentence"));
+//  // cipher_decrypt("char *sentence");
+//  char *alpha = "BUJI JHO IECUJXYDW";
+//  int count = 0;
+//  for(int i = 0; i < ALPHABET; i++)
+//  {
+//    alpha = shift_left(alpha);
+//    count++;
+//    printf("%s   number of shift = %d\n", shift_left(alpha), count);
+//  }
+//  //printf("%s\n", shift_left(alpha));
+// }
 

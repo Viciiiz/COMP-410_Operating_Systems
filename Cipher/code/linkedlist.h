@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 typedef struct char_node {
   char value;
   struct char_node * next;

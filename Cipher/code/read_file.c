@@ -31,10 +31,10 @@ void store_line_to_linkedlist()
 
 }
 
-int main()
-{
-  for(int i = 1; i < 50; i++)
-  {
-    printf("%c", read_char_from_file(i));
-  }
-}
+// int main()
+// {
+//   for(int i = 1; i < 50; i++)
+//   {
+//     printf("%c", read_char_from_file(i));
+//   }
+// }

@@ -52,10 +52,10 @@ void delete_queue(char_queue_t* queue)
   free(queue);
 }
 
-int main(){
-  char_queue_t* queue = new_queue();
-  for(int i = 65; i < 75; i++){
-    add_to_queue(queue, i);
-  }
-  print_queue(queue);
-}
+// int main(){
+//   char_queue_t* queue = new_queue();
+//   for(int i = 65; i < 75; i++){
+//     add_to_queue(queue, i);
+//   }
+//   print_queue(queue);
+// }
