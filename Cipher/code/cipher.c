@@ -18,6 +18,7 @@ char * convert_to_uppercase(char * sentence)
   }
  // printf("result: %s\n", sentence);
   return sentence;
+<<<<<<< HEAD
 }
 
 // function to convert a lowercase character to uppercase. It ignores non-letter characters.
@@ -26,6 +27,8 @@ char convert_char_to_uppercase(char c)
   if(c >= 97 && c <= 122) // if current character is lower case
     c -= 32;
   return c;
+=======
+>>>>>>> a54d519a81031033c19cd1a1cecfc6353fdf5155
 }
 
 // function to shift upper case letters to the left (since we shift to the right to encrypt, we shift to the right to decrypt). If not uppercase, ignore (eg: punctuation...)
