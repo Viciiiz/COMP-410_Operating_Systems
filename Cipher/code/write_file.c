@@ -18,7 +18,7 @@ void write_to_text_file(char input, char* file_name)
    {
       *(name_of_file + strlen(path) + i) = file_name[i];
    }
-
+  // printf("Path to write: %s\n", name_of_file);
    // handle file
    FILE *file;
    file = fopen(name_of_file,"a");
