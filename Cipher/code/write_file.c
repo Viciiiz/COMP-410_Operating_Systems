@@ -19,7 +19,6 @@ void write_to_text_file(char input, char* file_name)
    {
       *(name_of_file + strlen(path) + i) = file_name[i];
    }
-  // printf("Path to write: %s\n", name_of_file);
    // handle file
    FILE *file;
    file = fopen(name_of_file,"a");
@@ -34,24 +33,15 @@ void write_to_text_file(char input, char* file_name)
    fclose(file);
 }
 
-void write_to_output(FILE *output, int value)
+// write to decrypted.txt file
+void write_to_decrypted_file(FILE *output, int value)
 {
   FILE *out = output;
   char c[10];
-  // char * a;
-  // a = malloc(20);
-  // int i = 0;
-
-  // for(; i<strlen("sentence "); i++) *(a+i) = 
-  // fputs(, out);
   sprintf(c, "%d", value);
   for (int i = 0; i < sizeof(c); i++)
   {
-    if (c[i] == '\0')
-    {
-      break;
-    }
-    /////////////////////////
+    if (c[i] == '\0') break;
     putc(c[i], out);
   }
   putc('\n', output);
@@ -63,7 +53,8 @@ void empty_all_capital_file()
   fclose(fopen("../all_capital.txt", "w"));
 }
 
-FILE* create_output_file()
+// create file
+FILE* create_decrypted_file()
 {
   FILE *output;
 

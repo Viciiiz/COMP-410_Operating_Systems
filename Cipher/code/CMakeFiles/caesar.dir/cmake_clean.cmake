@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/caesar.dir/caesar.c.o"
   "CMakeFiles/caesar.dir/cipher.c.o"
   "CMakeFiles/caesar.dir/linkedlist.c.o"
-  "CMakeFiles/caesar.dir/read_file.c.o"
   "CMakeFiles/caesar.dir/write_file.c.o"
   "caesar.pdb"
   "caesar"

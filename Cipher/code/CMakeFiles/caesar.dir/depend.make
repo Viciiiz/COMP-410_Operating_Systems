@@ -4,20 +4,14 @@
 CMakeFiles/caesar.dir/caesar.c.o: caesar.c
 CMakeFiles/caesar.dir/caesar.c.o: cipher.h
 CMakeFiles/caesar.dir/caesar.c.o: linkedlist.h
-CMakeFiles/caesar.dir/caesar.c.o: read_file.h
 CMakeFiles/caesar.dir/caesar.c.o: write_file.h
 
 CMakeFiles/caesar.dir/cipher.c.o: cipher.c
 CMakeFiles/caesar.dir/cipher.c.o: cipher.h
-CMakeFiles/caesar.dir/cipher.c.o: linkedlist.h
-CMakeFiles/caesar.dir/cipher.c.o: read_file.h
 CMakeFiles/caesar.dir/cipher.c.o: write_file.h
 
 CMakeFiles/caesar.dir/linkedlist.c.o: linkedlist.c
 CMakeFiles/caesar.dir/linkedlist.c.o: linkedlist.h
-
-CMakeFiles/caesar.dir/read_file.c.o: read_file.c
-CMakeFiles/caesar.dir/read_file.c.o: read_file.h
 
 CMakeFiles/caesar.dir/write_file.c.o: write_file.c
 CMakeFiles/caesar.dir/write_file.c.o: write_file.h

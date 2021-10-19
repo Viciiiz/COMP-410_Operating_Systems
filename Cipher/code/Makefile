@@ -204,33 +204,6 @@ linkedlist.c.s:
 	$(MAKE) -f CMakeFiles/caesar.dir/build.make CMakeFiles/caesar.dir/linkedlist.c.s
 .PHONY : linkedlist.c.s
 
-read_file.o: read_file.c.o
-
-.PHONY : read_file.o
-
-# target to build an object file
-read_file.c.o:
-	$(MAKE) -f CMakeFiles/caesar.dir/build.make CMakeFiles/caesar.dir/read_file.c.o
-.PHONY : read_file.c.o
-
-read_file.i: read_file.c.i
-
-.PHONY : read_file.i
-
-# target to preprocess a source file
-read_file.c.i:
-	$(MAKE) -f CMakeFiles/caesar.dir/build.make CMakeFiles/caesar.dir/read_file.c.i
-.PHONY : read_file.c.i
-
-read_file.s: read_file.c.s
-
-.PHONY : read_file.s
-
-# target to generate assembly for a file
-read_file.c.s:
-	$(MAKE) -f CMakeFiles/caesar.dir/build.make CMakeFiles/caesar.dir/read_file.c.s
-.PHONY : read_file.c.s
-
 write_file.o: write_file.c.o
 
 .PHONY : write_file.o
@@ -276,9 +249,6 @@ help:
 	@echo "... linkedlist.o"
 	@echo "... linkedlist.i"
 	@echo "... linkedlist.s"
-	@echo "... read_file.o"
-	@echo "... read_file.i"
-	@echo "... read_file.s"
 	@echo "... write_file.o"
 	@echo "... write_file.i"
 	@echo "... write_file.s"

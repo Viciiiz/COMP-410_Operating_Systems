@@ -15,8 +15,6 @@ stdlib.h
 -
 ctype.h
 -
-read_file.h
-/home/runner/Assignment-5-viciiiz/COMP-410_Operating_Systems/Cipher/code/read_file.h
 write_file.h
 /home/runner/Assignment-5-viciiiz/COMP-410_Operating_Systems/Cipher/code/write_file.h
 cipher.h
@@ -33,12 +31,8 @@ stdlib.h
 -
 ctype.h
 -
-linkedlist.h
-/home/runner/Assignment-5-viciiiz/COMP-410_Operating_Systems/Cipher/code/linkedlist.h
 cipher.h
 /home/runner/Assignment-5-viciiiz/COMP-410_Operating_Systems/Cipher/code/cipher.h
-read_file.h
-/home/runner/Assignment-5-viciiiz/COMP-410_Operating_Systems/Cipher/code/read_file.h
 write_file.h
 /home/runner/Assignment-5-viciiiz/COMP-410_Operating_Systems/Cipher/code/write_file.h
 
@@ -53,16 +47,6 @@ linkedlist.h
 /home/runner/Assignment-5-viciiiz/COMP-410_Operating_Systems/Cipher/code/linkedlist.h
 
 /home/runner/Assignment-5-viciiiz/COMP-410_Operating_Systems/Cipher/code/linkedlist.h
-
-/home/runner/Assignment-5-viciiiz/COMP-410_Operating_Systems/Cipher/code/read_file.c
-stdio.h
--
-stdlib.h
--
-read_file.h
-/home/runner/Assignment-5-viciiiz/COMP-410_Operating_Systems/Cipher/code/read_file.h
-
-/home/runner/Assignment-5-viciiiz/COMP-410_Operating_Systems/Cipher/code/read_file.h
 
 /home/runner/Assignment-5-viciiiz/COMP-410_Operating_Systems/Cipher/code/write_file.c
 stdio.h

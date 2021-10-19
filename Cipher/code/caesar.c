@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#include "read_file.h"
+//#include "read_file.h"
 #include "write_file.h"
 #include "cipher.h"
 #include "linkedlist.h"
@@ -130,7 +130,7 @@ void cipher_decrypt(FILE *output, char_queue_t* encrypted_list, char_queue_t* di
   get_line(encrypted_list->head, string);
   char_node_t* encrypted;
   int counter = 1;
-  int line = 0; //////////
+  int line = 0; 
   while (encrypted_list->head != NULL)
   {
     int shift = 1, found = 0;
@@ -145,11 +145,10 @@ void cipher_decrypt(FILE *output, char_queue_t* encrypted_list, char_queue_t* di
     }
     if (found)
     {
-      //write_to_output(output, ALPHABET - shift);
-      write_to_output(output, ALPHABET - shift); //////////
+      write_to_decrypted_file(output, ALPHABET - shift);
       counter++;
     }
-    else write_to_output(output, -1); /////////
+    else write_to_decrypted_file(output, -1); 
     for (int i = 0; i < strlen(string)+1; i++) encrypted = delete_node(encrypted_list);
     get_line(encrypted, string);
     printf("decrypting line: %d\n", ++line);
@@ -158,33 +157,11 @@ void cipher_decrypt(FILE *output, char_queue_t* encrypted_list, char_queue_t* di
 
 
 
-int main(){
-
-  //int max = 100000000;
-  // store dictionary in string
-  // char * dictionary;
-  // dictionary = malloc(max);
-  // dictionary = malloc(max);
-  // read_file("../dictionary.txt", dictionary);
-  // printf("%s", dictionary);
-  
+int main(){  
   // read encrypted file input, convert to capital letters and store to all_capital.txt
   printf("Converting to upper case...\n");
   empty_all_capital_file();
   uppercase_to_file();
-
-  // store uppercase encrypted text in string
-  // char * encrypted;
-  // encrypted = malloc(max);
-  // read_file("../all_capital.txt", encrypted);
-  // printf("%s", encrypted);
-  
- // printf("%d", number_of_lines(dictionary));
-  //printf("%d", word_is_in_dictionary(dictionary, "TODAY"));
-
-  // load dictionary words in linkedlist
-  // char_queue_t* dictionary_list = load_dictionary_to_linkedlist();
-  // print_queue(dictionary_list);
 
   // load encrypted words in linkedlist
   char_queue_t* encrypted_contents = load_encrypted_to_linkedlist();
@@ -193,7 +170,7 @@ int main(){
   char_queue_t* dictionary = load_dictionary_to_linkedlist();
   
   // opening
-  FILE *output = create_output_file();
+  FILE *output = create_decrypted_file();
 
   // decrypt words and writing to output file
   printf("Decrypting... this may take a few seconds.\n");
