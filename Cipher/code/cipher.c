@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "cipher.h"
+#include "read_file.h"
+#include "write_file.h"
 
 #define ALPHABET 26
 #define A_ASCII 65
@@ -67,6 +69,84 @@ void cipher_decrypt(char * sentence)
 
       }
   }
+}
+
+// read each character, convert to uppercase, write to new text file all_capital.txt
+void uppercase_to_file()
+{
+  FILE *file;
+  char c;
+  file = fopen("../encrypted_text.txt", "r");
+  if (file == NULL) printf("File is not available \n");
+  else
+    while ((c = fgetc(file)) != EOF)
+    {
+      // convert to capital letter
+      c = convert_char_to_uppercase(c);
+      // write to all_capital file
+      write_to_text_file(c, "all_capital.txt");
+    }
+  fclose(file);
+}
+
+// function that reads each line from a text file
+// void read_each_line()
+// {
+//   int c;
+//   int index = 0;
+//   while((c = read_char_from_file(index))!= EOF){
+//     index++;
+//     printf("%c", c);
+//     if(c == '\n') printf("\nhere\n");
+//   }
+// }
+
+// function to read entire file
+void read_file(char * file, char * ch)
+{
+  FILE *fr;
+    fr = fopen (file, "r");
+    char c;
+    int index = 0;
+    while((c = getc(fr)) != EOF)
+    {
+        // printf("%c", c);
+        *(ch+index) = c;
+        index++;
+    }
+    fclose(fr);
+}
+
+// get the number of lines in a file
+int number_of_lines(char * file)
+{
+  int num = 0;
+  for(int i = 0; i < strlen(file); i++){
+    if(file[i] == '\n') num++;
+  }
+  return num+1;
+}
+
+// if word is in dictionary, return 1. else return 0
+int word_is_in_dictionary(char * dictionary, char * word)
+{
+  int number_lines = number_of_lines(dictionary);
+  for(int i = 0; i < number_lines; i++){
+    // get current word
+    char c;
+    char current[100];
+    int index = 0;
+    while((c = dictionary[i]) != '\n' || (c=dictionary[i])!= EOF){
+      current[index] = c;
+      printf("here: %s", current);
+      index++;
+      i++;
+    }
+    i++;
+    printf("hello %s", current);
+    if(current==word) return 1;
+  }
+  return 0;
 }
 
 // int main ()

@@ -32,3 +32,9 @@ void write_to_text_file(char input, char* file_name)
    fprintf(file,"%c", input);
    fclose(file);
 }
+
+// empty a file
+void empty_all_capital_file()
+{
+  fclose(fopen("../all_capital.txt", "w"));
+}

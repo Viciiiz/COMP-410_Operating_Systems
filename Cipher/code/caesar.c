@@ -1,42 +1,35 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
 #include "read_file.h"
 #include "write_file.h"
 #include "cipher.h"
 #include "linkedlist.h"
 
-#define MAX 100
-
-// empty a file
-void empty_all_capital_file()
-{
-  fclose(fopen("../all_capital.txt", "w"));
-}
-
-// read each character, convert to uppercase, write to new text file all_capital.txt
-void uppercase_to_file()
-{
-  FILE *file;
-  char c;
-  file = fopen("../pseudocode.txt", "r");
-  if (file == NULL) printf("File is not available \n");
-  else
-    while ((c = fgetc(file)) != EOF)
-    {
-      // convert to capital letter
-      c = convert_char_to_uppercase(c);
-      // write to all_capital file
-      write_to_text_file(c, "all_capital.txt");
-    }
-  fclose(file);
-}
-
-// read each line of all_capital.txt, store each character into 
 
 int main(){
-  empty_all_capital_file();
-  uppercase_to_file();
+
+  int max = 100000000;
+  // store dictionary in string
+  char * dictionary;
+  dictionary = malloc(max);
+  dictionary = malloc(max);
+  read_file("../dictionary.txt", dictionary);
+  // printf("%s", dictionary);
+  
+  // read encrypted file input, convert to capital letters and store to all_capital.txt
+  // empty_all_capital_file();
+  // uppercase_to_file();
+
+  // store uppercase encrypted text in string
+  // char * encrypted;
+  // encrypted = malloc(max);
+  // read_file("../all_capital.txt", encrypted);
+  // printf("%s", encrypted);
+  
+ // printf("%d", number_of_lines(dictionary));
+  printf("%d", word_is_in_dictionary(dictionary, "TODAY"));
 }
 
   
