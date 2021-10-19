@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include "linkedlist.h"
 #include "cipher.h"
 #include "read_file.h"
 #include "write_file.h"
+
 
 #define ALPHABET 26
 #define A_ASCII 65
@@ -51,25 +54,26 @@ char * shift_left(char * sentence)
 }
 
 // function to decrypt cypher. It will only treat alphabet letters
-void cipher_decrypt(char * sentence)
-{
-  char * to_decrypt = convert_to_uppercase(sentence);
+// void cipher_decrypt(char * sentence)
+// {
+//   char * to_decrypt = convert_to_uppercase(sentence);
   
-  char * decrypted;
-  decrypted = malloc(strlen(to_decrypt));
-  for(int i = 0; i < strlen(sentence); i++)
-  {
-      if(sentence[i] < A_ASCII || sentence[i] > Z_ASCII) // if not a capital letter 
-      {
-        *(decrypted + i) = to_decrypt[i];
-      } else {
-        // else, shift and check if each word is in dictionary
-        // if yes, print decrypted sentence and number of right shift that was used to encrypt it.
-        // if no, continue. If no happens more than 26 times, return error for the line.
+//   char * decrypted;
+//   decrypted = malloc(strlen(to_decrypt));
+//   for(int i = 0; i < strlen(sentence); i++)
+//   {
+//       if(sentence[i] < A_ASCII || sentence[i] > Z_ASCII) // if not a capital letter 
+//       {
+//         *(decrypted + i) = to_decrypt[i];
+//       } else {
+//         // else, shift and check if each word is in dictionary
+//         // if yes, print decrypted sentence and number of right shift that was used to encrypt it.
+//         // if no, continue. If no happens more than 26 times, return error for the line.
 
-      }
-  }
-}
+//       }
+//   }
+// }
+
 
 // read each character, convert to uppercase, write to new text file all_capital.txt
 void uppercase_to_file()
@@ -127,27 +131,32 @@ int number_of_lines(char * file)
   return num+1;
 }
 
+
 // if word is in dictionary, return 1. else return 0
-int word_is_in_dictionary(char * dictionary, char * word)
-{
-  int number_lines = number_of_lines(dictionary);
-  for(int i = 0; i < number_lines; i++){
-    // get current word
-    char c;
-    char current[100];
-    int index = 0;
-    while((c = dictionary[i]) != '\n' || (c=dictionary[i])!= EOF){
-      current[index] = c;
-      printf("here: %s", current);
-      index++;
-      i++;
-    }
-    i++;
-    printf("hello %s", current);
-    if(current==word) return 1;
-  }
-  return 0;
-}
+// int word_is_in_dictionary(char * dictionary, char * word)
+// {
+//   int number_lines = number_of_lines(dictionary);
+//   for(int i = 0; i < strlen(dictionary); i++){
+//     // get current word
+//     char c;
+//     char * current;
+//     current = malloc(100);
+//     int index = 0;
+//     while((c = dictionary[i]) != '\n' || (c=dictionary[i])!= EOF){
+//       *(current+index) = c;
+//       //printf("here: %s", current);
+//       index++;
+//       i++;
+//     }
+//     i++;
+//     printf("hello %s", current);
+//     if(current==word) return 1;
+//   }
+//   return 0;
+// }
+
+
+
 
 // int main ()
 // {

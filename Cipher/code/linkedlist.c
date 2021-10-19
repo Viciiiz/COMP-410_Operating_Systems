@@ -52,6 +52,49 @@ void delete_queue(char_queue_t* queue)
   free(queue);
 }
 
+int contains_in_queue(char_queue_t* queue, char value)
+{
+  int pos = 0;
+  for (char_node_t* current=queue->head; current != NULL; current=current->next)
+  {
+    if (current->value == value) return pos;
+    pos++;
+  }
+  return -1;
+}
+
+void get_line(char_node_t* node, char* string)
+{
+  int count = 0;
+  while (node != NULL)
+  {
+    if (node->value == '\n')
+      break;
+    string[count] = node->value;
+    count++;
+    node = node->next;
+  }
+  string[count] = '\0';
+}
+
+// get next node
+char_node_t* next_node(char_node_t* node)
+{
+  if (node->next == NULL) return NULL;
+  return node->next;
+}
+
+// delete a node
+char_node_t* delete_node(char_queue_t* queue)
+{
+  char_node_t* current = queue->head;
+  if (current == NULL) return NULL;   
+  queue->head = current->next;
+  free(current);
+  return queue->head;
+}
+
+
 // int main(){
 //   char_queue_t* queue = new_queue();
 //   for(int i = 65; i < 75; i++){
