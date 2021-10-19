@@ -156,7 +156,27 @@ int number_of_lines(char * file)
 // }
 
 
-
+// int word_is_in_dictionary(char * dictionary, char * word)
+// {
+//   int number_lines = number_of_lines(dictionary);
+//   for(int i = 0; i < strlen(dictionary); i++){
+//     // get current word
+//     char c;
+//     char * current;
+//     current = malloc(100);
+//     int index = 0;
+//     while((c = dictionary[i]) != '\n' || (c=dictionary[i])!= EOF){
+//       *(current+index) = c;
+//       //printf("here: %s", current);
+//       index++;
+//       i++;
+//     }
+//     i++;
+//     printf("hello %s", current);
+//     if(current==word) return 1;
+//   }
+//   return 0;
+// }
 
 // int main ()
 // {
