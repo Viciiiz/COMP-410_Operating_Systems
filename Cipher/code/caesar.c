@@ -32,7 +32,7 @@ void uppercase_to_file()
   fclose(file);
 }
 
-// read each line of all_capital.txt, 
+// read each line of all_capital.txt, store each character into 
 
 int main(){
   empty_all_capital_file();
